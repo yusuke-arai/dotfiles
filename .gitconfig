@@ -1,0 +1,7 @@
+[user]
+	name = Yusuke Arai
+	email = arai@zamec.org
+[alias]
+	co = checkout
+	ci = commit
+	st = status
