@@ -21,7 +21,6 @@
 
 
 ;; Haskell用
-(setq haskell-program-name "/usr/bin/ghci")
 (autoload 'ghc-init "ghc" nil t)
 (autoload 'ghc-debug "ghc" nil t)
 (add-hook 'haskell-mode-hook (lambda ()
@@ -29,3 +28,8 @@
 			       (define-key global-map "\C-t" 'ghc-complete)
 			       (turn-on-haskell-indent)
 			       ))
+(custom-set-variables
+   '(haskell-tags-on-save t))
+
+;; ElScreen
+(elscreen-start)
