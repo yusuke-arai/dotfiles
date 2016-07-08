@@ -6,3 +6,4 @@
 	ci = commit
 	st = status
 	di = diff
+	br = log --all --graph --pretty='format:%Cgreen%d%Creset %s %Cblue[%h]%Creset'
