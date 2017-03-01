@@ -36,7 +36,11 @@
 (package-initialize)
 
 
-;; Haskell用
+;; ==================== Haskell ====================
+;; Required packages are:
+;; * haskell-mode
+;; * ghc
+;; * company-ghc
 
 ; ghc-mod
 (autoload 'ghc-init "ghc" nil t)
@@ -57,5 +61,27 @@
 (add-to-list 'company-backends 'company-ghc)
 
 
-;; ElScreen
+;; ==================== PHP ====================
+;; Required packages are:
+;; * php-mode
+;; * ac-php
+
+; ac-php
+(add-hook 'php-mode-hook
+          '(lambda ()
+            (require 'ac-php)
+            (auto-complete-mode t)
+            (setq ac-sources  '(ac-source-php ) )
+            (yas-global-mode 1)
+            (define-key php-mode-map  (kbd "C-c b") 'ac-php-find-symbol-at-point)   ;goto define
+            ;(define-key php-mode-map  (kbd "C-t") 'ac-php-location-stack-back   ) ;go back
+            ))
+(add-hook 'php-mode-hook
+          '(lambda ()
+            (require 'company-php)
+            (company-mode t)
+            (add-to-list 'company-backends 'company-ac-php-backend )
+            ))
+
+;; ==================== ElScreen ====================
 (elscreen-start)
