@@ -6,7 +6,8 @@
 	ci = commit
 	st = status
 	di = diff
-	br = log --all --graph --pretty='format:%Cgreen%d%Creset %s %Cblue[%h]%Creset'
+	br = log --all --graph --pretty='format:%Cgreen%d%Creset %<|(80,trunc)%s %Cblue[%h]%Creset'
+	ba = log --all --graph --pretty='format:%Cgreen%d%Creset %s %Cblue[%h]%Creset'
 [core]
 	editor = vim
 	preloadindex = true
