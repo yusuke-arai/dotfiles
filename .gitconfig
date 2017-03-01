@@ -9,5 +9,7 @@
 	br = log --all --graph --pretty='format:%Cgreen%d%Creset %s %Cblue[%h]%Creset'
 [core]
 	editor = vim
+    preloadindex = true
+    fscache = true
 [push]
 	default = matching
