@@ -1,0 +1,20 @@
+'.platform-linux atom-text-editor[data-grammar~="haskell"]':
+  'ctrl-b': 'haskell-ghc-mod:go-to-declaration'
+  'ctrl-h': 'haskell-hoogle:lookup'
+  'ctrl-i': 'haskell-ghc-mod:show-info'
+  'ctrl-m': 'haskell-ghc-mod:insert-import'
+  'ctrl-t': 'haskell-ghc-mod:show-type'
+
+'.platform-win32 atom-text-editor[data-grammar~="haskell"]':
+  'ctrl-b': 'haskell-ghc-mod:go-to-declaration'
+  'ctrl-h': 'haskell-hoogle:lookup'
+  'ctrl-i': 'haskell-ghc-mod:show-info'
+  'ctrl-m': 'haskell-ghc-mod:insert-import'
+  'ctrl-t': 'haskell-ghc-mod:show-type'
+
+'.platform-darwin atom-text-editor[data-grammar~="haskell"]':
+  'cmd-b': 'haskell-ghc-mod:go-to-declaration'
+  'cmd-h': 'haskell-hoogle:lookup'
+  'cmd-i': 'haskell-ghc-mod:show-info'
+  'cmd-m': 'haskell-ghc-mod:insert-import'
+  'cmd-t': 'haskell-ghc-mod:show-type'

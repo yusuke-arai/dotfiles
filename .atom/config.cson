@@ -1,0 +1,13 @@
+"*":
+  "autocomplete-haskell": {}
+  core:
+    packagesWithKeymapsDisabled: []
+    telemetryConsent: "limited"
+  "exception-reporting":
+    userId: "b5294c40-d3c0-46e5-b34c-8520c986bb00"
+  "haskell-ghc-mod": {}
+  "ide-haskell":
+    onSavePrettify: true
+  "ide-haskell-hoogle": {}
+  welcome:
+    showOnStartup: false
