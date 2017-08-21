@@ -46,7 +46,7 @@
 (autoload 'ghc-init "ghc" nil t)
 (autoload 'ghc-debug "ghc" nil t)
 ; HaRe
-(add-to-list 'load-path "/Users/yusuke/.stack/snapshots/x86_64-osx/lts-6.14/7.10.3/share/x86_64-osx-ghc-7.10.3/HaRe-0.8.2.3/elisp")(require 'hare)
+(add-to-list 'load-path "/home/arai/.stack/snapshots/x86_64-linux-nix/lts-8.23/8.0.2/share/x86_64-linux-ghc-8.0.2/HaRe-0.8.4.0/elisp")(require 'hare)
 (autoload 'hare-init "hare" nil t)
 ; haskell-mode
 (add-hook 'haskell-mode-hook
@@ -54,6 +54,7 @@
             (ghc-init)
             (hare-init)
             (define-key haskell-mode-map (kbd "C-c b") 'haskell-mode-jump-to-def-or-tag)
+            (define-key haskell-mode-map (kbd "C-c t") 'haskell-mode-show-type-at)
             ))
 ; company-ghc
 (require 'company)
@@ -84,4 +85,6 @@
             ))
 
 ;; ==================== ElScreen ====================
-(elscreen-start)
+;; Required packages are:
+;; * elscreen
+;(elscreen-start)
