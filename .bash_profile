@@ -1,3 +1,7 @@
+# History size
+export HISTSIZE=10000
+export HISTFILESIZE=10000
+
 # For Mac OS
 if [ -f /usr/local/etc/bash_completion ]; then
   source /usr/local/etc/bash_completion
