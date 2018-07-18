@@ -39,3 +39,6 @@ PS1=$(ps1)
 
 # Binaries of haskell programs
 export PATH=~/.local/bin:$PATH
+
+# Charset of less command
+export LESSCHARSET=utf-8
