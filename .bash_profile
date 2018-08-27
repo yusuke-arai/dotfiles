@@ -12,7 +12,20 @@ if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
   source /usr/local/etc/bash_completion.d/git-prompt.sh
 fi
 
+# For Arch Linux
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+  source /usr/share/bash-completion/bash_completion
+  source /usr/share/bash-completion/completions/git
+fi
+
 # PS1
+git_branch () {
+  local branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+  if [ x"${branch}" != x"" ]; then
+    echo -n ' ('${branch}')'
+  fi
+}
+
 ps1 () {
   local color_default='\e[39m'
   local color_red='\e[31m'
@@ -30,9 +43,7 @@ ps1 () {
   local bg_magenta='\e[45m'
   local bg_cyan='\e[46m'
 
-  if [ "$(type -t __git_ps1)" = "function" ]; then
-    local git_info=${color_cyan}'`__git_ps1 " (%s)"`'
-  fi
+  local git_info=${color_cyan}'$(git_branch)'
   echo -n '\n'${color_green}'\u@\h '${color_yellow}'\w'${git_info}${color_default}'\n$ '
 }
 PS1=$(ps1)
