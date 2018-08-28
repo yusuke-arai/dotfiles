@@ -54,11 +54,12 @@
 (intero-global-mode 1)
 ; hlintを有効化
 (flycheck-add-next-checker 'intero '(warning . haskell-hlint))
+; Interoのショートカットキー追加
+(define-key intero-mode-map (kbd "C-c g") 'intero-goto-definition)
 
 ; HaRe
 (add-to-list 'load-path "/home/arai/.stack/snapshots/x86_64-linux-nix/lts-8.23/8.0.2/share/x86_64-linux-ghc-8.0.2/HaRe-0.8.4.0/elisp")(require 'hare)
 (autoload 'hare-init "hare" nil t)
-; haskell-mode
 (add-hook 'haskell-mode-hook
           (lambda ()
             (hare-init)
