@@ -49,7 +49,10 @@ ps1 () {
 PS1=$(ps1)
 
 # Binaries of haskell programs
-export PATH=~/.local/bin:$PATH
+echo $PATH | tr : "\n" | grep ~/.local/bin > /dev/null
+if [ $? -ne 0 ]; then
+  export PATH=~/.local/bin:$PATH
+fi
 
 # Charset of less command
 export LESSCHARSET=utf-8
