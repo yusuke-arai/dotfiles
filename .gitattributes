@@ -1,0 +1,145 @@
+### Default
+*               -text
+
+### C, C++
+*.c             text diff merge
+*.cpp           text diff merge
+
+### .NET
+*.sln           text diff merge
+*.vb            text diff merge
+*.vbhtml        text diff merge
+*.vbproj        text diff merge
+*.cs            text diff merge
+*.cshtml        text diff merge
+*.csporj        text diff merge
+*.fs            text diff merge
+*.fsproj        text diff merge
+*.pdb           -text -diff -merge
+
+### PHP
+*.php           text diff merge
+
+### Ruby
+*.rb            text diff merge
+
+### Python
+*.py            text diff merge
+
+### JavaScript
+*.js            text diff merge
+
+### TypeScript
+*.ts            text diff merge
+
+### CofeeScript
+*.coffee        text diff merge
+
+### R
+*.r             text diff merge
+
+### Shell script
+*.sh            text diff merge
+
+### Java
+*.java          text diff merge
+*.class         -text -diff -merge
+*.jar           -text -diff -merge
+
+### Scala
+*.scala         text diff merge
+
+### Kotlin
+*.kt            text diff merge
+
+### Haskell
+*.hs            text diff merge
+
+### Archive
+*.zip           -text -diff -merge
+*.gz            -text -diff -merge
+*.bz2           -text -diff -merge
+*.xz            -text -diff -merge
+*.7z            -text -diff -merge
+*.tar           -text -diff -merge
+
+### Image
+*.jpg           -text -diff -merge
+*.jpeg          -text -diff -merge
+*.png           -text -diff -merge
+*.gif           -text -diff -merge
+*.bmp           -text -diff -merge
+*.svg           text diff merge
+
+### Sound
+*.mp3           -text -diff -merge
+*.mp4           -text -diff -merge
+*.m4a           -text -diff -merge
+*.acc           -text -diff -merge
+*.ogg           -text -diff -merge
+*.wav           -text -diff -merge
+
+### Plain text
+*.txt           text diff merge
+
+### Markdown
+*.md            text diff merge
+
+### JSON
+*.json          text diff merge
+
+### YAML
+*.yaml          text diff merge
+*.yml           text diff merge
+
+### XML
+*.xml           text diff merge
+
+### CSV
+*.csv           text diff merge
+*.tsv           text diff merge
+
+### HTML, style sheet
+*.html          text diff merge
+*.css           text diff merge
+*.sass          text diff merge
+*.scss          text diff merge
+
+### Microsoft Office
+*.xls           -text -diff -merge
+*.xlsx          -text -diff -merge
+*.xlsm          -text -diff -merge
+*.doc           -text -diff -merge
+*.docx          -text -diff -merge
+*.ppt           -text -diff -merge
+*.pptx          -text -diff -merge
+*.bas           text diff merge
+*.cls           text diff merge
+
+### OpenDocument
+*.odt           -text -diff -merge
+*.ods           -text -diff -merge
+*.odp           -text -diff -merge
+
+### TeX
+*.tex           text diff merge
+
+### AsciiDoc
+*.adoc          text diff merge
+
+### Windows executable
+*.exe           -text -diff -merge
+
+### Windows library
+*.dll           -text -diff -merge
+
+### Windows batch
+*.bat           text diff merge
+*.cmd           text diff merge
+
+### PowerShell script
+*.ps1           text diff merge
+
+### PDF
+*.pdf           -text -diff -merge
+
