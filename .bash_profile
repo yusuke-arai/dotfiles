@@ -43,7 +43,7 @@ ps1 () {
   local bg_magenta='\e[45m'
   local bg_cyan='\e[46m'
 
-  local git_info=${color_cyan}'$(git_branch)'
+  local git_info=${color_cyan}'`git_branch`'
   echo -n '\n'${color_green}'\u@\h '${color_yellow}'\w'${git_info}${color_default}'\n$ '
 }
 PS1=$(ps1)
