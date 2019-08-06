@@ -12,6 +12,7 @@
 	editor = vim
 	preloadindex = true
 	fscache = true
+	quotepath = false
 [push]
 	default = matching
 [merge]
