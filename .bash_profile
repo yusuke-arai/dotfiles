@@ -56,3 +56,6 @@ fi
 
 # Charset of less command
 export LESSCHARSET=utf-8
+
+# Colored ls
+alias ls="ls --color"
