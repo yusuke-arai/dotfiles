@@ -1,12 +1,12 @@
 [user]
-	name = Yusuke Arai
+	name = ARAI Yusuke
 	email = arai@zamec.org
 [alias]
 	co = checkout
 	ci = commit
 	st = status
 	di = diff
-	br = log --all --graph --pretty='format:%Cgreen%d%Creset %<|(80,trunc)%s %Cblue[%h]%Creset'
+	br = log --graph --pretty='format:%Cgreen%d%Creset %<|(80,trunc)%s %Cblue[%h]%Creset'
 	ba = log --all --graph --pretty='format:%Cgreen%d%Creset %s %Cblue[%h]%Creset'
 [core]
 	editor = vim
