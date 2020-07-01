@@ -1,3 +1,8 @@
+# Replace the process to tmux
+if [[ -o INTERACTIVE && -z "$TMUX" && x"$TERM" != x"screen" ]]; then
+    which tmux && exec tmux
+fi
+
 # History
 HISTFILE=~/.zsh_history
 export HISTSIZE=10000
