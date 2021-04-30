@@ -1,4 +1,9 @@
 # Replace the process to tmux
 if [ -z "$TMUX" -a x"$TERM" != x"screen" ]
-    which tmux && exec tmux -u
+    switch "$WSLENV"
+        case 'VSCODE*'
+            /bin/true # do nothing
+        case '*'
+            which tmux && exec tmux -u
+    end
 end
