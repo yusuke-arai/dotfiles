@@ -59,3 +59,17 @@ export LESSCHARSET=utf-8
 
 # Colored ls
 alias ls="ls --color"
+
+# .bashrc
+if [ -f ~/.bashrc ]; then
+  source ~/.bashrc
+fi
+
+# fish
+if [[ $WSLENV =~ VSCODE ]]; then
+  : # do nothing
+else
+  exec /usr/bin/fish
+fi
+
+export PATH="$HOME/.poetry/bin:$PATH"
