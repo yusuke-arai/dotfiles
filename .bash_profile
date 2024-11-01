@@ -18,6 +18,11 @@ if [ -f /usr/share/bash-completion/bash_completion ]; then
   source /usr/share/bash-completion/completions/git
 fi
 
+# Windows (Git Bash)
+if [ x"$OS" = x"Windows_NT" ]; then
+  export LANG=ja_JP.UTF-8
+fi
+
 # PS1
 git_branch () {
   local branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
@@ -68,7 +73,7 @@ fi
 # fish
 if [[ $WSLENV =~ VSCODE ]]; then
   : # do nothing
-else
+elif [ -f /usr/bin/fish ]; then
   exec /usr/bin/fish
 fi
 
