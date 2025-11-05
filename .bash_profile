@@ -70,11 +70,6 @@ if [ -f ~/.bashrc ]; then
   source ~/.bashrc
 fi
 
-# fish
-if [[ $WSLENV =~ VSCODE ]]; then
-  : # do nothing
-elif [ -f /usr/bin/fish ]; then
-  exec /usr/bin/fish
-fi
-
-export PATH="$HOME/.poetry/bin:$PATH"
+if [ -e /home/arai/.nix-profile/etc/profile.d/nix.sh ]; then . /home/arai/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
