@@ -4,20 +4,8 @@ if [ -n "$WSLENV" ]
 end
 
 # Oh My Posh
-set --export POSH_THEME '/mnt/c/Users/新井佑介/scoop/apps/oh-my-posh/current/themes/sim-web.omp.json'
-set --export POSH_SHELL fish
-set --export POSH_SHELL_VERSION $FISH_VERSION
-set --export POWERLINE_COMMAND oh-my-posh
-set --export POSH_SESSION_ID 'b91984e4-f878-4ed9-b2f5-d300876281c8'
-set --export CONDA_PROMPT_MODIFIER false
-
-set --global _omp_tooltip_command ''
-set --global _omp_current_rprompt ''
-set --global _omp_transient 0
-set --global _omp_executable '/home/arai/.local/bin/oh-my-posh'
-set --global _omp_ftcs_marks 0
-set --global _omp_transient_prompt 0
-set --global _omp_prompt_mark 0
+set --export POSH_SESSION_ID "a8983f1b-db7a-40c6-a3dd-c983519923c0"
+source '/home/arai/.cache/oh-my-posh/init.4317453330764339238.fish'
 
 # disable all known python virtual environment prompts
 set --global VIRTUAL_ENV_DISABLE_PROMPT 1
@@ -258,3 +246,5 @@ set --global _omp_transient_prompt 1
 enable_poshtooltips
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH
+fish_add_path $HOME/.local/bin
+fish_add_path $HOME/.dotnet/tools
