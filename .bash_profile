@@ -1,26 +1,21 @@
+# Use fish instead of Bash if exists
+if [[ $WSLENV =~ VSCODE ]]; then
+  : # do nothing
+elif [ -f /usr/bin/fish ]; then
+  exec /usr/bin/fish
+fi
+
 # History size
 export HISTSIZE=10000
 export HISTFILESIZE=10000
 
-# For Mac OS
-if [ -f /usr/local/etc/bash_completion ]; then
-  source /usr/local/etc/bash_completion
-fi
-
-if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
-  source /usr/local/etc/bash_completion.d/git-completion.bash
-  source /usr/local/etc/bash_completion.d/git-prompt.sh
-fi
-
-# For Arch Linux
-if [ -f /usr/share/bash-completion/bash_completion ]; then
-  source /usr/share/bash-completion/bash_completion
-  source /usr/share/bash-completion/completions/git
-fi
-
 # Windows (Git Bash)
 if [ x"$OS" = x"Windows_NT" ]; then
   export LANG=ja_JP.UTF-8
+  if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
+    source /usr/local/etc/bash_completion.d/git-completion.bash
+    source /usr/local/etc/bash_completion.d/git-prompt.sh
+  fi
 fi
 
 # PS1
@@ -48,16 +43,10 @@ ps1 () {
   local bg_magenta='\e[45m'
   local bg_cyan='\e[46m'
 
-  local git_info=${color_cyan}'`git_branch`'
-  echo -n '\n'${color_green}'\u@\h '${color_yellow}'\w'${git_info}${color_default}'\n$ '
+  local git_info=${color_yellow}'`git_branch`'
+  echo -n '\n'${color_green}'\w'${git_info}${color_default}'\n$ '
 }
 PS1=$(ps1)
-
-# Binaries of haskell programs
-echo $PATH | tr : "\n" | grep ~/.local/bin > /dev/null
-if [ $? -ne 0 ]; then
-  export PATH=~/.local/bin:$PATH
-fi
 
 # Charset of less command
 export LESSCHARSET=utf-8
@@ -65,11 +54,24 @@ export LESSCHARSET=utf-8
 # Colored ls
 alias ls="ls --color"
 
-# .bashrc
-if [ -f ~/.bashrc ]; then
-  source ~/.bashrc
+# Poetry
+if [ -d "$HOME/.poetry/bin" ]; then
+  export PATH="$HOME/.poetry/bin:$PATH"
 fi
 
-if [ -e /home/arai/.nix-profile/etc/profile.d/nix.sh ]; then . /home/arai/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+# ~/.local/bin
+if [ -d "$HOME/.local/bin" ]; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+
+# Volta
+if [ -d "$HOME/.volta" ]; then
+  export VOLTA_HOME="$HOME/.volta"
+  export PATH="$VOLTA_HOME/bin:$PATH"
+fi
+
+# .bashrc
+if [ -f "$HOME/.bashrc" ]; then
+  source "$HOME/.bashrc"
+fi
+
