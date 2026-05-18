@@ -7,6 +7,7 @@ vim.cmd('syntax on')
 vim.opt.encoding = 'utf-8'
 vim.opt.backspace = 'indent,eol,start'
 vim.opt.ambiwidth = 'double'
+vim.opt.clipboard = "unnamedplus"
 
 if (vim.fn.has('win32'))
 then
