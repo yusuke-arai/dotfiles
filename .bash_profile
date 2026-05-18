@@ -62,6 +62,15 @@ fi
 # ~/.local/bin
 if [ -d "$HOME/.local/bin" ]; then
   export PATH="$HOME/.local/bin:$PATH"
+
+# .bashrc
+if [ -f "$HOME/.bashrc" ]; then
+  source "$HOME/.bashrc"
+fi
+
+# Nix
+if [ -f $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
+  source $HOME/.nix-profile/etc/profile.d/nix.sh
 fi
 
 # Volta
@@ -70,8 +79,8 @@ if [ -d "$HOME/.volta" ]; then
   export PATH="$VOLTA_HOME/bin:$PATH"
 fi
 
-# .bashrc
-if [ -f "$HOME/.bashrc" ]; then
-  source "$HOME/.bashrc"
+# Cargo
+if [ -f "$HOME/.cargo/env" ]; then
+  source "$HOME/.cargo/env"
 fi
 
