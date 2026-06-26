@@ -1,5 +1,9 @@
 # Use fish instead of Bash if exists
 if [[ $WSLENV =~ VSCODE ]]; then
+  # Visual Studio Code
+  : # do nothing
+elif [[ $- != *i* ]]; then
+  # Non-interactive
   : # do nothing
 elif [ -f /usr/bin/fish ]; then
   exec /usr/bin/fish
@@ -62,6 +66,7 @@ fi
 # ~/.local/bin
 if [ -d "$HOME/.local/bin" ]; then
   export PATH="$HOME/.local/bin:$PATH"
+fi
 
 # .bashrc
 if [ -f "$HOME/.bashrc" ]; then
