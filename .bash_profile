@@ -78,12 +78,6 @@ if [ -f $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
   source $HOME/.nix-profile/etc/profile.d/nix.sh
 fi
 
-# Volta
-if [ -d "$HOME/.volta" ]; then
-  export VOLTA_HOME="$HOME/.volta"
-  export PATH="$VOLTA_HOME/bin:$PATH"
-fi
-
 # Cargo
 if [ -f "$HOME/.cargo/env" ]; then
   source "$HOME/.cargo/env"
